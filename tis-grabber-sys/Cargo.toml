@@ -1,0 +1,24 @@
+[package]
+name = "tis-grabber-sys"
+version = "0.0.1"
+description = "A Rust bindings for IC Imaging Control Legacy SDK from The Imaging Source. (Raw Part from bindgen)"
+documentation = "https://docs.rs/tis-grabber-sys"
+readme = "README.md"
+
+edition.workspace = true
+license.workspace = true
+homepage.workspace = true
+repository.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+build = "build.rs"
+
+[build-dependencies]
+bindgen = { workspace = true, optional = true }
+once_cell.workspace = true
+
+[features]
+default = []
+buildtime-bindgen = ["bindgen"]
+test-ensure-existing-device = []
