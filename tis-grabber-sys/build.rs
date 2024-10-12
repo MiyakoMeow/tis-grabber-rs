@@ -1,13 +1,13 @@
 const LIB_NOT_FOUND_TIPS: &str = "The library is not found in system path! Please download and install ic4 sdk in your computer! Link: https://www.theimagingsource.com/zh-hans-cn/support/download/icimagingcontrol4win-1.1.0.2833/";
 
 #[cfg(target_arch = "x86")]
-const DLL_NAME: &str = "tisgrabber.dll";
+const DLL_FILE_NAME: &str = "tisgrabber.dll";
 #[cfg(target_arch = "x86_64")]
-const DLL_NAME: &str = "tisgrabber_x64.dll";
+const DLL_FILE_NAME: &str = "tisgrabber_x64.dll";
 #[cfg(target_arch = "x86")]
-const LIB_NAME: &str = "tisgrabber.lib";
+const LIB_NAME: &str = "tisgrabber";
 #[cfg(target_arch = "x86_64")]
-const LIB_NAME: &str = "tisgrabber_x64.lib";
+const LIB_NAME: &str = "tisgrabber_x64";
 
 use std::env;
 #[allow(unused)]
@@ -44,7 +44,7 @@ fn main() {
     let paths = std::env::split_paths(&path_ori);
     let lib_root = paths
         .into_iter()
-        .find(|path| path.join(DLL_NAME).is_file())
+        .find(|path| path.join(DLL_FILE_NAME).is_file())
         .map(|path| path.join("..").join(".."))
         .expect(LIB_NOT_FOUND_TIPS);
     #[cfg(feature = "buildtime-bindgen")]
