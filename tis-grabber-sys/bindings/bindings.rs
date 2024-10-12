@@ -19,7 +19,6 @@ pub const IC_NOT_ALL_PROPERTIES_RESTORED: i8 = -4;
 pub const IC_DEVICE_NOT_FOUND: i8 = -5;
 pub const IC_FILE_NOT_FOUND: i8 = 35;
 #[repr(i32)]
-#[non_exhaustive]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum IMG_FILETYPE {
     FILETYPE_BMP = 0,
@@ -27,7 +26,6 @@ pub enum IMG_FILETYPE {
     FILETYPE_MEGA = 65536,
 }
 #[repr(i32)]
-#[non_exhaustive]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum COLORFORMAT {
     Y800 = 0,
@@ -39,7 +37,6 @@ pub enum COLORFORMAT {
     COLORFORMAT_MEGA = 65536,
 }
 #[repr(i32)]
-#[non_exhaustive]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum VIDEO_PROPERTY {
     PROP_VID_BRIGHTNESS = 0,
@@ -55,7 +52,6 @@ pub enum VIDEO_PROPERTY {
     PROP_VID_MEGA = 65536,
 }
 #[repr(i32)]
-#[non_exhaustive]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum CAMERA_PROPERTY {
     PROP_CAM_PAN = 0,
@@ -68,7 +64,6 @@ pub enum CAMERA_PROPERTY {
     PROP_CAM_MEGA = 65536,
 }
 #[repr(i32)]
-#[non_exhaustive]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum FRAMEFILTER_PARAM_TYPE {
     eParamLong = 0,
@@ -78,7 +73,6 @@ pub enum FRAMEFILTER_PARAM_TYPE {
     eParamData = 4,
 }
 #[repr(i32)]
-#[non_exhaustive]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum PROPERTY_INTERFACE_TYPE {
     ePropertyRange = 0,

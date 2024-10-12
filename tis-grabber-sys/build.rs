@@ -77,24 +77,27 @@ fn lib_bindgen(lib_root: &Path) {
         .fit_macro_constants(true)
         .respect_cxx_access_specs(true)
         .default_enum_style(bindgen::EnumVariation::Rust {
-            non_exhaustive: true,
+            non_exhaustive: false,
         })
         .default_alias_style(bindgen::AliasVariation::NewTypeDeref)
         .generate_block(true)
         .generate_cstr(true)
+        .c_naming(false)
+        ;
+    // Add Derive
+    let bindings = bindings
         .derive_default(true)
         .derive_partialeq(true)
-        .derive_eq(true)
-        ;
+        .derive_eq(true);
     // Add Include Dir
     let bindings = bindings.clang_args(["-I", ic4_include_dir.to_string_lossy().as_ref()]);
     // Add C++ Version
     let bindings = bindings.clang_arg("-std=c++17");
+    // Build
     let bindings = bindings
         // Tell cargo to invalidate the built crate whenever any of the
         // included header files changed.
-        .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()));
-    let bindings = bindings
+        .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
         // Finish the builder and generate the bindings.
         .generate()
         // Unwrap the Result and panic on failure.
