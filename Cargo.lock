@@ -216,7 +216,7 @@ dependencies = [
 
 [[package]]
 name = "tis-grabber-sys"
-version = "0.0.1"
+version = "0.0.2"
 dependencies = [
  "bindgen",
  "once_cell",

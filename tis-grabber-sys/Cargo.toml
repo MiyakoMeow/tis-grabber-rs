@@ -1,6 +1,6 @@
 [package]
 name = "tis-grabber-sys"
-version = "0.0.1"
+version = "0.0.2"
 description = "A Rust bindings for IC Imaging Control Legacy SDK from The Imaging Source. (Raw Part from bindgen)"
 documentation = "https://docs.rs/tis-grabber-sys"
 readme = "README.md"
